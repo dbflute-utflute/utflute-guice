@@ -100,7 +100,7 @@ public abstract class GuiceTestCase extends InjectionTestCase {
     }
 
     /**
-     * Prepare module list for Google Guice. <br />
+     * Prepare module list for Google Guice. <br>
      * You should add DataSource and TransactionManager to the module. 
      * @return The list of module. (NotNull)
      */
