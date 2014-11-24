@@ -1,3 +1,3 @@
 #!/bin/bash
 
-mvn -e clean deploy install
+mvn -e clean deploy -Dgpg.keyname=$1
