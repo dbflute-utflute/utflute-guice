@@ -44,16 +44,16 @@ public abstract class WebContainerTestCase extends ContainerTestCase {
     //                                         Static Cached
     //                                         -------------
     /** The cached determination of suppressing web mock. (NullAllowed: null means beginning or ending) */
-    protected static Boolean _xcachedSuppressWebMock;
+    private static Boolean _xcachedSuppressWebMock;
 
     // -----------------------------------------------------
     //                                              Web Mock
     //                                              --------
     /** The mock request of the test case execution. (NullAllowed: when no web mock or beginning or ending) */
-    protected MockletHttpServletRequest _xmockRequest;
+    private MockletHttpServletRequest _xmockRequest;
 
     /** The mock response of the test case execution. (NullAllowed: when no web mock or beginning or ending) */
-    protected MockletHttpServletResponse _xmockResponse;
+    private MockletHttpServletResponse _xmockResponse;
 
     // ===================================================================================
     //                                                                            Settings
@@ -248,5 +248,32 @@ public abstract class WebContainerTestCase extends ContainerTestCase {
         if (session != null) {
             session.setAttribute(name, value);
         }
+    }
+
+    // ===================================================================================
+    //                                                                            Accessor
+    //                                                                            ========
+    protected static Boolean xgetCachedSuppressWebMock() {
+        return _xcachedSuppressWebMock;
+    }
+
+    protected static void xsetCachedSuppressWebMock(Boolean xcachedSuppressWebMock) {
+        _xcachedSuppressWebMock = xcachedSuppressWebMock;
+    }
+
+    protected MockletHttpServletRequest xgetMockRequest() {
+        return _xmockRequest;
+    }
+
+    protected void xsetMockRequest(MockletHttpServletRequest xmockRequest) {
+        _xmockRequest = xmockRequest;
+    }
+
+    protected MockletHttpServletResponse xgetMockResponse() {
+        return _xmockResponse;
+    }
+
+    protected void xsetMockResponse(MockletHttpServletResponse xmockResponse) {
+        _xmockResponse = xmockResponse;
     }
 }

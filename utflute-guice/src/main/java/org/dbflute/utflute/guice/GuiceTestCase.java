@@ -29,6 +29,7 @@ import org.dbflute.utflute.core.transaction.TransactionFailureException;
 import org.dbflute.utflute.core.transaction.TransactionResource;
 
 import com.google.inject.Guice;
+import com.google.inject.Inject;
 import com.google.inject.Injector;
 import com.google.inject.Module;
 
@@ -45,16 +46,17 @@ public abstract class GuiceTestCase extends InjectionTestCase {
     //                                          Static Cache
     //                                          ------------
     /** The cached injector for DI container. (NullAllowed: null means beginning or test execution) */
-    protected static Injector _xcachedInjector;
+    private static Injector _xcachedInjector;
 
     // -----------------------------------------------------
     //                                          Guice Object
     //                                          ------------
     /** The current active injector for DI container. {Guice Object} */
-    protected Injector _xcurrentActiveInjector;
+    private Injector _xcurrentActiveInjector;
 
     /** The transaction manager for platform. (NotNull: after injection) */
-    protected TransactionManager _xtransactionManager;
+    @Inject
+    private TransactionManager _xtransactionManager;
 
     // ===================================================================================
     //                                                                            Settings
@@ -181,23 +183,17 @@ public abstract class GuiceTestCase extends InjectionTestCase {
     // -----------------------------------------------------
     //                                             Component
     //                                             ---------
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     protected <COMPONENT> COMPONENT getComponent(Class<COMPONENT> type) { // user method
         return _xcurrentActiveInjector.getInstance(type);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     protected <COMPONENT> COMPONENT getComponent(String name) { // user method
         throw new IllegalStateException("The guice does not support by-name component: " + name);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     protected boolean hasComponent(Class<?> type) { // user method
         try {
             getComponent(type);
@@ -207,9 +203,7 @@ public abstract class GuiceTestCase extends InjectionTestCase {
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     protected boolean hasComponent(String name) { // user method
         try {
             getComponent(name);
@@ -217,5 +211,24 @@ public abstract class GuiceTestCase extends InjectionTestCase {
         } catch (RuntimeException e) {
             return false;
         }
+    }
+
+    // ===================================================================================
+    //                                                                            Accessor
+    //                                                                            ========
+    protected static Injector xgetCachedInjector() {
+        return _xcachedInjector;
+    }
+
+    protected static void xsetCachedInjector(Injector xcachedInjector) {
+        _xcachedInjector = xcachedInjector;
+    }
+
+    protected Injector xgetCurrentActiveInjector() {
+        return _xcurrentActiveInjector;
+    }
+
+    protected void xsetCurrentActiveInjector(Injector xcurrentActiveInjector) {
+        _xcurrentActiveInjector = xcurrentActiveInjector;
     }
 }
