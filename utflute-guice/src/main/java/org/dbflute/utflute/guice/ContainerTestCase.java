@@ -17,6 +17,8 @@ package org.dbflute.utflute.guice;
 
 import javax.sql.DataSource;
 
+import com.google.inject.Inject;
+
 /**
  * @author jflute
  * @since 0.4.0 (2014/03/16 Sunday)
@@ -27,7 +29,8 @@ public abstract class ContainerTestCase extends GuiceTestCase {
     //                                                                           Attribute
     //                                                                           =========
     /** The (main) data source for database. (NotNull: after injection) */
-    protected DataSource _xdataSource;
+    @Inject
+    private DataSource _xdataSource;
 
     // ===================================================================================
     //                                                                         JDBC Helper
