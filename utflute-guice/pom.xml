@@ -17,14 +17,6 @@
 		<guice.version>3.0</guice.version>
 	</properties>
 
-	<repositories>
-		<repository>
-			<id>local</id>
-			<name>Local Repository</name>
-			<url>file:${basedir}/repo</url>
-		</repository>
-	</repositories>
-
 	<dependencies>
 		<!-- =============== -->
 		<!-- |   compile   | -->
@@ -41,12 +33,22 @@
 		</dependency>
 
 		<!-- ================ -->
+		<!-- |   provided   | -->
+		<!-- ================ -->
+		<dependency>
+			<groupId>javax.transaction</groupId>
+			<artifactId>javax.transaction-api</artifactId>
+			<version>1.2</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- ================ -->
 		<!-- |     test     | -->
 		<!-- ================ -->
 		<dependency>
 			<groupId>com.atomikos</groupId>
-			<artifactId>transactions</artifactId>
-			<scope>test</scope>
+			<artifactId>transactions-jdbc</artifactId>
+			<version>4.0.4</version>
 		</dependency>
 	</dependencies>
 </project>
