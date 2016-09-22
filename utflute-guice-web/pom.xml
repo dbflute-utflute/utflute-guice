@@ -67,6 +67,7 @@
 			<groupId>com.atomikos</groupId>
 			<artifactId>transactions-jdbc</artifactId>
 			<version>4.0.4</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 </project>
