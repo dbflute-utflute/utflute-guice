@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.dbflute.utflute</groupId>
 		<artifactId>utflute-base</artifactId>
-		<version>0.6.1B</version>
+		<version>0.6.2</version>
 	</parent>
 	<artifactId>utflute-guice-web</artifactId>
 	<packaging>jar</packaging>
@@ -52,13 +52,21 @@
 			<version>2.0</version>
 			<scope>provided</scope> 
 		</dependency>
+		<!-- transaction -->
+		<dependency>
+			<groupId>javax.transaction</groupId>
+			<artifactId>javax.transaction-api</artifactId>
+			<version>1.2</version>
+			<scope>provided</scope>
+		</dependency>
 
 		<!-- ================ -->
 		<!-- |     test     | -->
 		<!-- ================ -->
 		<dependency>
 			<groupId>com.atomikos</groupId>
-			<artifactId>transactions</artifactId>
+			<artifactId>transactions-jdbc</artifactId>
+			<version>4.0.4</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>

@@ -24,6 +24,11 @@ import org.dbflute.utflute.guice.dbflute.exbhv.FooBhv;
  */
 public class FooActionTest extends MockUnitTestCase {
 
+    @Override
+    protected boolean xcanRecycleContainer() {
+        return false;
+    }
+
     public void test_inject_basic() throws Exception {
         // ## Arrange ##
         FooAction action = new FooAction();
