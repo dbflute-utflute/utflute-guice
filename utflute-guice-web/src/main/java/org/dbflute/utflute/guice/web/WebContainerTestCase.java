@@ -135,7 +135,11 @@ public abstract class WebContainerTestCase extends ContainerTestCase {
     }
 
     protected MockletServletContext createMockletServletContext() {
-        return new MockletServletContextImpl("utservlet");
+        return new MockletServletContextImpl(prepareMockContextPath());
+    }
+
+    protected String prepareMockContextPath() { // you can override
+        return "utcontext";
     }
 
     protected MockletHttpServletRequest createMockletHttpServletRequest(ServletContext servletContext) {
@@ -146,8 +150,8 @@ public abstract class WebContainerTestCase extends ContainerTestCase {
         return new MockletHttpServletResponseImpl(request);
     }
 
-    protected String prepareServletPath() { // customize point
-        return "/utflute";
+    protected String prepareServletPath() { // you can override
+        return "/utservlet";
     }
 
     protected void xkeepMockRequestInstance(MockletHttpServletRequest request, MockletHttpServletResponse response) {
