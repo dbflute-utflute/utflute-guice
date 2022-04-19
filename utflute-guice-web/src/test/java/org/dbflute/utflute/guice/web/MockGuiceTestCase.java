@@ -22,7 +22,6 @@ import javax.transaction.SystemException;
 import javax.transaction.TransactionManager;
 import javax.transaction.UserTransaction;
 
-import org.dbflute.utflute.guice.web.WebContainerTestCase;
 import org.dbflute.utflute.guice.web.bean.BarLogic;
 import org.dbflute.utflute.guice.web.dbflute.exbhv.BarBhv;
 
