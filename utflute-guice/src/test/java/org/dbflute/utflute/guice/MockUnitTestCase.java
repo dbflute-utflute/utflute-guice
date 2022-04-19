@@ -22,7 +22,6 @@ import javax.transaction.SystemException;
 import javax.transaction.TransactionManager;
 import javax.transaction.UserTransaction;
 
-import org.dbflute.utflute.guice.ContainerTestCase;
 import org.dbflute.utflute.guice.bean.FooController;
 import org.dbflute.utflute.guice.bean.FooControllerImpl;
 import org.dbflute.utflute.guice.bean.FooFacade;
