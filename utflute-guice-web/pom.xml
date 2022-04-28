@@ -13,14 +13,6 @@
 	<name>UTFlute Guice Web</name>
 	<description>The unit test library for Google Guice (with DBFlute) and Web</description>
 
-	<repositories>
-		<repository>
-			<id>local</id>
-			<name>Local Repository</name>
-			<url>file:${basedir}/repo</url>
-		</repository>
-	</repositories>
-
 	<dependencies>
 		<!-- =============== -->
 		<!-- |   compile   | -->
