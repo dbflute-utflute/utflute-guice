@@ -5,21 +5,13 @@
 	<parent>
 		<groupId>org.dbflute.utflute</groupId>
 		<artifactId>utflute-base</artifactId>
-		<version>0.9.4</version>
+		<version>0.9.5</version>
 	</parent>
 	<artifactId>utflute-guice-web</artifactId>
 	<packaging>jar</packaging>
 
 	<name>UTFlute Guice Web</name>
 	<description>The unit test library for Google Guice (with DBFlute) and Web</description>
-
-	<repositories>
-		<repository>
-			<id>local</id>
-			<name>Local Repository</name>
-			<url>file:${basedir}/repo</url>
-		</repository>
-	</repositories>
 
 	<dependencies>
 		<!-- =============== -->
@@ -66,7 +58,7 @@
 		<dependency>
 			<groupId>com.atomikos</groupId>
 			<artifactId>transactions-jdbc</artifactId>
-			<version>4.0.4</version>
+			<version>5.0.9</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>

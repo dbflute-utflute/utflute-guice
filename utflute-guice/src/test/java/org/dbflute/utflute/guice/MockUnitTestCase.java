@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2021 the original author or authors.
+ * Copyright 2014-2022 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,6 @@ import javax.transaction.SystemException;
 import javax.transaction.TransactionManager;
 import javax.transaction.UserTransaction;
 
-import org.dbflute.utflute.guice.ContainerTestCase;
 import org.dbflute.utflute.guice.bean.FooController;
 import org.dbflute.utflute.guice.bean.FooControllerImpl;
 import org.dbflute.utflute.guice.bean.FooFacade;
@@ -32,7 +31,7 @@ import org.dbflute.utflute.guice.dbflute.exbhv.FooBhv;
 
 import com.atomikos.icatch.jta.UserTransactionImp;
 import com.atomikos.icatch.jta.UserTransactionManager;
-import com.atomikos.jdbc.nonxa.AtomikosNonXADataSourceBean;
+import com.atomikos.jdbc.AtomikosNonXADataSourceBean;
 import com.google.inject.AbstractModule;
 import com.google.inject.Binder;
 import com.google.inject.Module;
